@@ -10,16 +10,7 @@ function makedefault
   mkdir ./map/
   mkdir ./tmp/
 }
-# Очистка директорий для того чтоб скачать свежие
-function clearup
-{
-  echo "clearup"
-  rm -rf ./osmsrc/*.*
-  rm -rf ./map/*.*
-  rm -rf ./tmp/*.*
-}
 makedefault
-clearup
 for oblname in `cat to_names | awk -F ";" '{ print $1}'` 
 do 
 if [ ! -f "./osmsrc/${oblname}.osm.bz2" ] 
