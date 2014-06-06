@@ -2,10 +2,8 @@
 set +ue
 set +x
 mkdir zip
-for f in `ls ./map`; 
+#zip -9 -r ./zip/${f}.zip ./map/$f
+for oblname in `cat to_names | awk -F ";" '{ print $1}'`.
 do
-echo $f
-f1="${fullfile##*/}"
-zip -9 -r ./zip/${f}.zip ./map/$f
+  zip -D -9 -r ./zip/${oblname}.zip    ./map/${oblname}.map
 done
-

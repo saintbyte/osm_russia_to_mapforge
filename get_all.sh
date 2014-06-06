@@ -38,6 +38,6 @@ then
     bunzip2 -c ./osmsrc/${oblname}.osm.bz2 > ./tmp/${oblname}.osm
  fi 
  make_map ${oblname} $BBOX
- rm -rf ./tmp/${oblname}.osm
+ #rm -rf ./tmp/${oblname}.osm
 fi
 done
