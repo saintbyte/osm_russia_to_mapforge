@@ -41,3 +41,5 @@ then
  #rm -rf ./tmp/${oblname}.osm
 fi
 done
+./get_finland.sh
+./get_GB.sh
