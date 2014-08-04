@@ -1,13 +1,9 @@
 #!/bin/bash
+# ISO Code 
+CODE=BY
 set -x
 set -ue
-#Russia Asia
-wget -P ./osmsrc http://download.geofabrik.de/asia/russia-asian-part-latest.osm.bz2
-#Russia Europe
-wget -P ./osmsrc http://download.geofabrik.de/europe/russia-european-part-latest.osm.bz2
-
-bunzip2 -c ./osmsrc/russia-asian-part-latest.osm.bz2 > ./tmp/russia-asian-part-latest.osm
-bunzip2 -c ./osmsrc/russia-european-part-latest.osm.bz2 > ./tmp/russia-european-part-latest.osm
-#osmosis --rx 1.osm --rx 2.osm --rx 3.osm --merge --merge --wx merged.osm
-osmosis --rx ./tmp/russia-european-part-latest.osm --rx ./tmp/russia-asian-part-latest.osm --merge  --wx ./tmp/russia_all.osm
-osmosis --rx file=./tmp/russia_all.osm --mapfile-writer file=./map/russia_all.map type=hd  bbox=$BBOX
+BBOX=""
+wget -P ./osmsrc http://download.geofabrik.de/europe/belarus-latest.osm.bz2
+bunzip2 -c ./osmsrc/belarus-latest.osm.bz2 > ./tmp/${CODE}.osm
+osmosis --rx file=./tmp/${CODE}.osm --mapfile-writer file=./map/BY.map type=hd  bbox=$BBOX
