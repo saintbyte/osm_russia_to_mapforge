@@ -27,6 +27,7 @@ function make_map
 
 makedefault
 #clearup
+./download.sh
 for oblname in `cat to_names | awk -F ";" '{ print $1}'` 
 do
 if [ -f "./osmsrc/${oblname}.osm.bz2" ]
@@ -43,3 +44,5 @@ fi
 done
 ./get_finland.sh
 ./get_GB.sh
+./get_belarus.sh
+./get_KRIM.sh
