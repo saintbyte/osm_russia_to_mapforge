@@ -2,7 +2,7 @@
 set +ue
 set -x
 #http://download.geofabrik.de/europe.html
-#wget -P ./osmsrc http://download.geofabrik.de/europe/great-britain-latest.osm.bz2
+wget -P ./osmsrc http://download.geofabrik.de/europe/great-britain-latest.osm.bz2
 
 
 bunzip2 -c ./osmsrc/great-britain-latest.osm.bz2  > ./tmp/GB.osm 

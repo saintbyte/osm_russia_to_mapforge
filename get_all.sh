@@ -45,4 +45,4 @@ done
 ./get_finland.sh
 ./get_GB.sh
 ./get_belarus.sh
-./get_KRIM.sh
+./get_krim.sh
